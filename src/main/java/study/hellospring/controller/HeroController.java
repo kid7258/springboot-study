@@ -16,11 +16,6 @@ public class HeroController {
         this.heroService = heroService;
     }
 
-    @PostMapping(value = "/api/heroes")
-    public Hero create(@RequestBody Hero hero) { // < 파라미터 확인 필요
-        return heroService.join(hero);
-    }
-
     @GetMapping(value = "/api/heroes")
     public List<Hero> list() {
         return heroService.findMembers();
@@ -29,6 +24,16 @@ public class HeroController {
     @GetMapping(value = "/api/heroes/{id}")
     public Hero findOne(@PathVariable int id) {
         return heroService.findById(id);
+    }
+
+    @PostMapping(value = "/api/heroes")
+    public Hero create(@RequestBody Hero hero) { // < 파라미터 확인 필요
+        return heroService.join(hero);
+    }
+
+    @PutMapping(value = "/api/heroes")
+    public Hero update(@RequestBody Hero hero) {
+        return heroService.update(hero);
     }
 
     @DeleteMapping(value = "/api/heroes/{id}")

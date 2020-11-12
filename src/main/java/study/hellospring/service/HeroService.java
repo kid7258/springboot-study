@@ -16,8 +16,13 @@ public class HeroService {
 
     public Hero join(Hero hero) {
         heroRepository.save(hero);
-
         return hero;
+    }
+
+    public Hero update(Hero hero) {
+        Hero targetHero = findById(hero.getId());
+        targetHero.setName(hero.getName());
+        return heroRepository.save(targetHero);
     }
 
     public List<Hero> findMembers() {
