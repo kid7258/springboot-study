@@ -24,7 +24,7 @@ public class HeroService {
         return heroRepository.findAll();
     }
 
-    public Optional<Hero> findById(int id) {
+    public Hero findById(int id) {
         return heroRepository.findById(id);
     }
 

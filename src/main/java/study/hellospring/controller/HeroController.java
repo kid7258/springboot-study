@@ -26,6 +26,11 @@ public class HeroController {
         return heroService.findMembers();
     }
 
+    @GetMapping(value = "/api/heroes/{id}")
+    public Hero findOne(@PathVariable int id) {
+        return heroService.findById(id);
+    }
+
     @DeleteMapping(value = "/api/heroes/{id}")
     // 여기에 뭔가 응답을 주고 싶음, 삭제된 hero의 id 또는 name
     public void delete(@PathVariable int id) {

@@ -7,8 +7,8 @@ import java.util.Optional;
 
 public interface HeroRepository {
     Hero save(Hero hero);
-    Optional<Hero> findById(int id);
-    Optional<Hero> findByName(String name);
+    Hero findById(int id);
+    Hero findByName(String name);
     List<Hero> findAll();
-    Optional<Hero> deleteById(int id);
+    Hero deleteById(int id);
 }

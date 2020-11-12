@@ -7,5 +7,5 @@ import java.util.Optional;
 
 public interface SpringDataJpaHeroRepository extends JpaRepository<Hero, Integer>, HeroRepository {
     @Override
-    Optional<Hero> findByName(String name);
+    Hero findByName(String name);
 }
